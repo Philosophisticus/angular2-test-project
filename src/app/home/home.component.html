@@ -1,0 +1,49 @@
+<div class="home-container">
+
+  <div class="container-fluid">
+    <div class="row">
+
+      <div class="col-xs-6">
+
+        <div class="row">
+
+          <div class="col-xs-12 controls">
+            <div class="row">
+              <div class="col-xs-3">
+                <button type="button" class="btn btn-primary" (click)="addNewBlock()">Add new block</button>
+              </div>
+              <div class="col-xs-9">
+                <div class="form-group">
+                  <select class="form-control" id="sel1" [(ngModel)]="selectedBlockType">
+                    <option value="{{ BLOCK_TYPE_1 }}" selected>Block type 1</option>
+                    <option value="{{ BLOCK_TYPE_2 }}">Block type 2</option>
+                    <option value="{{ BLOCK_TYPE_3 }}">Block type 3</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 blocks-container" dnd-sortable-container [sortableData]="blockTypes">
+            <div *ngFor="let blockType of blockTypes; let i = index" dnd-sortable [sortableIndex]="i">
+              <block-type-1 *ngIf="blockType && blockType.type === BLOCK_TYPE_1" [blockType1]="blockType" (onDelete)="delete($event)"></block-type-1>
+              <block-type-2 *ngIf="blockType && blockType.type === BLOCK_TYPE_2" [blockType2]="blockType" (onDelete)="delete($event)"></block-type-2>
+              <block-type-3 *ngIf="blockType && blockType.type === BLOCK_TYPE_3" [blockType3]="blockType" (onDelete)="delete($event)"></block-type-3>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="col-xs-6">
+        <div class="row">
+          <div class="col-xs-12 json-editor-wrapper">
+            <div class="error-message margin-bottom-15" *ngIf="showErrorMessage">Json format is invalid</div>
+            <json-editor [code]="code" (onChange)="jsonChange($event)"></json-editor>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

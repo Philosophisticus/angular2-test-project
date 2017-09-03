@@ -1,0 +1,14 @@
+<div class="block-type block-type-1" *ngIf="blockType1">
+  <block-type-header [title]="headerTitle" (onDelete)="delete()"></block-type-header>
+  <div class="block-type-1_content">
+    <div class="form-group" *ngIf="blockType1.title">
+      <label>{{ blockType1.title.key }}</label>
+      <input class="form-control" [(ngModel)]="blockType1.title.value">
+      <!--(ngModelChange)="change()"-->
+    </div>
+    <div class="form-group" *ngIf="blockType1.description">
+      <label>{{ blockType1.description.key }}</label>
+      <textarea class="form-control" rows="5" [(ngModel)]="blockType1.description.value"></textarea>
+    </div>
+  </div>
+</div>

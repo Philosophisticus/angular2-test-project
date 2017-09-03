@@ -1,0 +1,8 @@
+.margin-bottom-15 {
+  margin-bottom: 15px;
+}
+
+.CodeMirror {
+  border: 1px solid lightgrey;
+  height: calc(100vh - 130px); // height: auto works very slowly on big amounts of data
+}

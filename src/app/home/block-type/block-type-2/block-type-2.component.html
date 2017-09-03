@@ -1,0 +1,16 @@
+<div class="block-type block-type-2" *ngIf="blockType2">
+  <block-type-header [title]="headerTitle" (onDelete)="delete()"></block-type-header>
+  <div class="block-type-2_content">
+    <div class="form-group" *ngIf="blockType2.title">
+      <label>{{ blockType2.title.key }}</label>
+      <input class="form-control" [(ngModel)]="blockType2.title.value">
+      <!--(ngModelChange)="change()"-->
+    </div>
+    <div class="form-group" *ngIf="blockType2.description">
+      <label>{{ blockType2.description.key }}</label>
+      <div class="checkbox" *ngFor="let option of blockType2.description.options">
+        <label *ngIf="option"><input type="checkbox" [(ngModel)]="option.value">{{ option.title }}</label>
+      </div>
+    </div>
+  </div>
+</div>

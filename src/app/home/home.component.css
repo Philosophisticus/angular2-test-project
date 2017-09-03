@@ -1,0 +1,28 @@
+/*styles for home content only*/
+.home-container {
+  margin-top: 15px;
+  min-width: 1024px;
+}
+
+.error-message {
+  color: red;
+}
+
+.json-editor-wrapper {
+  position: fixed;
+  width: 45%;
+}
+
+.controls {
+  position: fixed;
+  width: 50%;
+  min-width: 512px;
+  top: 0;
+  z-index: 100;
+  background-color: white;
+  padding-top: 30px;
+}
+
+.blocks-container {
+  margin-top: 85px;
+}

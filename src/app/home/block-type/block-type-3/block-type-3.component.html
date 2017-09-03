@@ -1,0 +1,21 @@
+<div class="block-type block-type-3" *ngIf="blockType3">
+  <block-type-header [title]="headerTitle" (onDelete)="delete()"></block-type-header>
+  <div class="block-type-2_content">
+    <div class="form-group" *ngIf="blockType3.title">
+      <label>{{ blockType3.title.key }}</label>
+      <input class="form-control" [(ngModel)]="blockType3.title.value">
+    </div>
+    <div class="form-group" *ngIf="blockType3.description">
+      <label>{{ blockType3.description.key }}</label>
+      <div class="radio" *ngFor="let option of blockType3.description.options">
+        <label *ngIf="option">
+          <input type="radio"
+                 [value]="option.value"
+                 [(ngModel)]="blockType3.description.value"
+                 name="radio{{ blockType3.id }}"
+                 [checked]="option.value === blockType3.description.value">{{ option.title }}
+        </label>
+      </div>
+    </div>
+  </div>
+</div>

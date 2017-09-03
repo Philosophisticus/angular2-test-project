@@ -1,0 +1,15 @@
+<div class="json-editor">
+  <div class="form-group">
+    <label>Json editor</label>
+  </div>
+  <codemirror [(ngModel)]="jeCode"
+              (change)="change($event)"
+              [config]="{
+                lineNumbers: true,
+                mode: {
+                  name: 'javascript',
+                  json: true
+                }
+              }">
+  </codemirror>
+</div>
