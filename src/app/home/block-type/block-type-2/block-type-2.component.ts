@@ -5,7 +5,6 @@ import {
   EventEmitter
 } from '@angular/core';
 import { BlockType2 } from './block-type-2';
-import { BlockTypeDeleteEvent } from '../block-type-delete-event';
 
 @Component({
   selector: 'block-type-2',
@@ -20,7 +19,7 @@ export class BlockType2Component {
   @Output() private onDelete = new EventEmitter<any>();
 
   public delete() {
-    this.onDelete.emit(new BlockTypeDeleteEvent(this.blockType2.id, this.blockType2.type ));
+    this.onDelete.emit(this.blockType2);
   }
 
 }

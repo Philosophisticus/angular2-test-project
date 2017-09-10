@@ -37,6 +37,8 @@ import { BlockType2Component } from './home/block-type/block-type-2/block-type-2
 import { BlockType3Component } from './home/block-type/block-type-3/block-type-3.component';
 import { JsonEditorComponent } from './home/json-editor/json-editor.component';
 
+import { HomeService } from './home/home.service';
+
 import '../styles/styles.scss';
 
 // Application wide providers
@@ -80,7 +82,8 @@ type StoreType = {
    */
   providers: [
     ENV_PROVIDERS,
-    APP_PROVIDERS
+    APP_PROVIDERS,
+    HomeService
   ]
 })
 export class AppModule {

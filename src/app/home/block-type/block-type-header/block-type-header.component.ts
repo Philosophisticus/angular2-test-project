@@ -1,6 +1,5 @@
 import {
   Component,
-  OnInit,
   Input,
   Output,
   EventEmitter
@@ -11,7 +10,7 @@ import {
   styleUrls: [ './block-type-header.component.css' ],
   templateUrl: './block-type-header.component.html'
 })
-export class BlockTypeHeaderComponent implements OnInit {
+export class BlockTypeHeaderComponent {
 
   @Input() public title: string;
   @Output() private onDelete = new EventEmitter<any>();
@@ -19,10 +18,6 @@ export class BlockTypeHeaderComponent implements OnInit {
   public delete($event) {
     $event.preventDefault();
     this.onDelete.emit();
-  }
-
-  public ngOnInit() {
-    console.log('block type header init');
   }
 
 }
